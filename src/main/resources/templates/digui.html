@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div th:fragment="digui(lists,level)">
+    <div class="onereplay" th:each="tr : ${lists}">
+        <img src="/imgs/1.jpg" class="userhead" th:src="|/imgs/${tr.getReplay().getUheadurl()}|">
+        <span class="name" th:text="${tr.getReplay().getUname()}">小灰</span><span class="tr-time" th:text="${tr.getReplay().getRtime()}">2018-01-02</span>
+        <p class="tr-content" th:text="'回复 '+${tr.getReplay().getTouname()}+' :'+${tr.getReplay().getRcontent()}">回复 小虎 ：这是回复内容</p>
+        <div th:unless="${tr.getListreplay().size()==0}" th:include="this::digui(${tr.getListreplay()},${level+1})"></div>
+    </div>
+</div>
+</body>
+</html>

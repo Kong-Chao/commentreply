@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<div class="onetopic" th:each="tp : ${topics}">
+    <img src="/imgs/1.jpg" class="userhead" th:src="|/imgs/${tp.getTopic().getUheadurl()}|">
+    <span class="name" th:text="${tp.getTopic().getUname()}">小虎</span><span class="tr-time" th:text="${tp.getTopic().getTtime()}">2018-01-02</span>
+    <p class="tr-content" th:text="${tp.getTopic().getTcontent()}">这是留言内容</p>
+    <div th:include="digui::digui(${tp.getReplays()},1)">
+        <!--<div class="onereplay" th:each="tr : ${tp.getReplays()}">-->
+        <!--<img src="/imgs/1.jpg" class="userhead">-->
+        <!--<span class="name">小灰</span><span class="tr-time">2018-01-02</span>-->
+        <!--<p class="tr-content">回复 小虎 ：这是回复内容</p>-->
+        <!--<div class="onereplay">-->
+        <!--<img src="/imgs/1.jpg" class="userhead">-->
+        <!--<span class="name">小灰</span><span class="tr-time">2018-01-02</span>-->
+        <!--<p class="tr-content">回复 小虎 ：这是回复内容</p>-->
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+    <!--<div class="onereplay">-->
+    <!--<img src="/imgs/1.jpg" class="userhead">-->
+    <!--<span class="name">小灰</span><span class="tr-time">2018-01-02</span>-->
+    <!--<p class="tr-content">回复 小虎 ：这是回复内容</p>-->
+    <!--</div>-->
+</div>
+</body>
+</html>

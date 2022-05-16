@@ -1,0 +1,27 @@
+.onetopic{
+    margin: 10px 0;
+}
+.userhead{
+    width: 50px;
+    border: 1px solid #e8cfcf;
+    border-radius: 30px;
+}
+.name{
+    position: relative;
+    top: -18px;
+}
+.tr-time{
+    position: relative;
+    top: -18px;
+    left: 18px;
+    font-size: 12px;
+}
+.tr-content{
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #b1a5a5;
+    margin: 0;
+    margin-left:52px;
+}
+.onereplay{
+    margin: 10px 0 10px 40px;
+}
